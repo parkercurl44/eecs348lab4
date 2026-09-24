@@ -8,7 +8,7 @@ int main()
     char originalScale;
     char targetScale;
 
-    printf("Enter the temperature value: ");
+    printf("Enter the temperature value: ");//gets temp from user 
 
     if (scanf("%lf", &temp) != 1)
     {
@@ -16,12 +16,13 @@ int main()
         return 1;
     }
 
-    printf("Enter the original scale (C, F, or K): ");
+    printf("Enter the original scale (C, F, or K): ");//user selects what temp scale their input is in 
     scanf(" %c", &originalScale);
 
-    printf("Enter the scale to convert to (C, F, or K): ");
+    printf("Enter the scale to convert to (C, F, or K): ");//user chooses what scale they want to convert to 
     scanf(" %c", &targetScale);
 
+    //checks invalid scale input 
     if (originalScale != 'C' && originalScale != 'F' && originalScale != 'K')
     {
         printf("Invalid original scale.\n");
@@ -33,6 +34,7 @@ int main()
         printf("Invalid target scale.\n");
         return 1;
     }
+    //kelvin cant be below zero. negative will print invalid 
 
     if (originalScale == 'K' && temp < 0)
     {
@@ -40,7 +42,7 @@ int main()
         return 1;
     }
 
-    /* Convert original temperature to Celsius first */
+    // Convert original temperature to Celsius first
 
     if (originalScale == 'C')
     {
@@ -55,7 +57,7 @@ int main()
         celsiusTemp = temp - 273.15;
     }
 
-    /* Convert Celsius to the requested scale */
+    // Convert Celsius to the requested scale
 
     if (targetScale == 'C')
     {

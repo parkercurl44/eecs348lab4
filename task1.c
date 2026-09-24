@@ -6,26 +6,28 @@ int main()
 
     while (1)
     {
+        //keep asking user for input until they enter 1 to stop 
         printf("Enter the NFL score (Enter 1 to stop): ");
 
-        if (scanf("%d", &score) != 1)
+        if (scanf("%d", &score) != 1)//checks if input is valid/an integer
         {
             printf("Invalid input.\n");
             return 1;
         }
 
-        if (score == 1)
+        if (score == 1)//stop program if user enters 1 
         {
             break;
         }
 
-        if (score < 0)
+        if (score < 0) //if user puts negative number it will print invalid 
         {
             printf("Invalid score.\n");
             continue;
         }
 
         printf("Possible combinations of scoring plays if a team's score is %d:\n", score);
+        //check all possible combinations of scoring plays
 
         for (int td2 = 0; td2 <= score / 8; td2++)
         {
@@ -36,7 +38,7 @@ int main()
                     for (int fg = 0; fg <= score / 3; fg++)
                     {
                         for (int safety = 0; safety <= score / 2; safety++)
-                        {
+                        {//checks if the combination of scoring plays = score 
                             if ((8 * td2) +
                                 (7 * td1) +
                                 (6 * td) +
