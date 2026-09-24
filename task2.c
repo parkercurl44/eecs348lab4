@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main()
 {
@@ -21,6 +22,9 @@ int main()
 
     printf("Enter the scale to convert to (C, F, or K): ");//user chooses what scale they want to convert to 
     scanf(" %c", &targetScale);
+
+    originalScale = toupper(originalScale);
+    targetScale = toupper(targetScale);
 
     //checks invalid scale input 
     if (originalScale != 'C' && originalScale != 'F' && originalScale != 'K')
