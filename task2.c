@@ -23,6 +23,7 @@ int main()
     printf("Enter the scale to convert to (C, F, or K): ");//user chooses what scale they want to convert to 
     scanf(" %c", &targetScale);
 
+    //makes input uppercase so it wont spit out invalid 
     originalScale = toupper(originalScale);
     targetScale = toupper(targetScale);
 
